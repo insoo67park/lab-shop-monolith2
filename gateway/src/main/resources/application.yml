@@ -8,6 +8,10 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: inventory
+          uri: http://localhost:8081
+          predicates:
+            - Path=, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -31,6 +35,10 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: inventory
+          uri: http://inventory:8080
+          predicates:
+            - Path=, 
         - id: frontend
           uri: http://frontend:8080
           predicates:
